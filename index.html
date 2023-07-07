@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script  src="js/jquery-3.7.0.js"></script>
+        <script type="module" src="js/login.js"></script>
+
+        <title>KZ BOOM</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+            .overlay {
+              position: absolute;
+              display: none;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background: rgba(255, 255, 255, 0.7);
+              z-index: 20;
+            }
+      
+            .popup {
+              position: absolute;
+              width: 50%;
+              height: 50%;
+              top: 25%;
+              left: 25%;
+              text-align: center;
+              background: rgb(16, 105, 71);
+            }
+           
+            .popup h3 {
+              font-size: 15px;
+              height: 50px;
+              line-height: 50px;
+              color: rgb(0, 0, 0);
+            }
+      
+          </style>
+    </head>
+
+    <body style="background-color:#070518;">
+        <div class="overlay" id="overlay">
+
+            <div class="popup">
+              <h1>Log In</h1>
+              <input id="lemail" type="text" name="lemail" placeholder="E-mail"> <br><br>
+              <input id="lpassword" type="Password" name="lpassword" placeholder="Password"> <br><br><br><br>
+          
+              <input id="login" type="submit" name="login_submit" value="Log In"><br><br><br><br>
+            </div>
+          </div>
+
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header" style="background-color:#110D30;">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i> KZ BOOM
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+
+                        <li class="nav__item">
+                            <a href="#Games" class="nav__link">Games</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+
+
+            <!--==================== PRODUCTS ====================-->
+            <section class="product section container" id="products">
+				<div class="steps__bg">
+               <h2 class="section__title-center">
+                    All Games
+                </h2>
+
+                <div class="product__container grid">
+                    <article class="product__card">
+                 
+						<a href="american_roulette_royale/index.html">
+                        <img src="assets/img/royale.jpg" alt="" class="product__img" />
+						
+                        <h3 class="product__title">Roulette Royale</h3>
+                        </a>
+						
+                    </article>
+					
+                    <article class="product__card">
+                        
+						<a href="slot_zeus_treasures/index.html">
+						
+                        <img src="assets/img/zeus.jpg" alt="" class="product__img">
+						
+                        <h3 class="product__title">Zeus </h3>
+						</a>
+
+                    </article>
+
+                    <article class="product__card">
+                        <a href="casino_spin_and_win/index.html">
+
+                        <img src="assets/img/spin.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Spin And Win</h3>
+						</a>
+                    </article>
+
+                    <article class="product__card">
+                        <a href="olympus_keno/index.html">
+
+                        <img src="assets/img/keno.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Keno</h3>
+						</a>
+                    </article>
+
+                    <article class="product__card">
+                        <a href="slot_space_adventure/index.html">
+
+                        <img src="assets/img/space.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Space Adventure</h3>
+						</a>
+                    </article>
+                    <article class="product__card">
+                        <a href="3d_soccer_slot/index.html">
+
+                        <img src="assets/img/soccer_slot.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Soccer Slot</h3>
+						</a>
+                    </article>					
+                    <article class="product__card">
+                        <a href="pachinko/index.html">
+
+                        <img src="assets/img/pachinko.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Pachinko</h3>
+						</a>
+                    </article>
+                    <article class="product__card">
+                        <a href="slot_arabian/index.html">
+
+                        <img src="assets/img/slot_arabian.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot Arabian</h3>
+						</a>
+                    </article>					
+                    </article>
+                    <article class="product__card">
+                        <a href="slot_christmas/index.html">
+
+                        <img src="assets/img/slot_christmas.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot Christmas</h3>
+						</a>
+                    </article>		
+                    </article>
+                    <article class="product__card">
+                        <a href="slot_katana_fruits/index.html">
+
+                        <img src="assets/img/slot_katana_fruits.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot Katana Fruits</h3>
+						</a>
+                    </article>		
+					
+                    </article>
+                    <article class="product__card">
+                        <a href="slot_the_gold_pot/index.html">
+
+                        <img src="assets/img/slot_the_gold_pot.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot The Gold Pot</h3>
+						</a>
+                    </article>		
+                    <article class="product__card">
+                        <a href="slot_ramses/index.html">
+
+                        <img src="assets/img/slot_ramses.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot Ramses</h3>
+						</a>
+                    </article>	
+                    <article class="product__card">
+                        <a href="the_frute/index.html">
+
+                        <img src="assets/img/the_fruite.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Fruits Slot</h3>
+						</a>
+                    </article>	
+                    <article class="product__card">
+                        <a href="bingo/index.html">
+
+                        <img src="assets/img/bingo.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Bingo</h3>
+						</a>
+                    </article>	
+					    <article class="product__card">
+                        <a href="football/index.html">
+
+                        <img src="assets/img/football.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Soccer Unlimited</h3>
+						</a>
+                    </article>
+                    <article class="product__card">
+                        <a href="slot_mr_chicken/index.html">
+
+                        <img src="assets/img/chicken.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Slot Chicken</h3>
+						</a>
+                    </article>	
+                    <article class="product__card">
+                        <a href="plinko/index.html">
+
+                        <img src="assets/img/plinko.jpg" alt="" class="product__img">
+
+                        <h3 class="product__title">Plinko</h3>
+						</a>
+                    </article>		
+                </div>
+            </section>
+
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+
+    </body>
+</html>
