@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from showcase.codethislab.com/games/pachinko/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Jun 2023 20:50:15 GMT -->
+<head>
+        <title>PACHINKO NEKO</title>
+        <link rel="stylesheet" href="css/reset.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
+        <link rel="stylesheet" href="css/ios_fullscreen.css" type="text/css">
+        <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<meta name="msapplication-tap-highlight" content="no"/>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/easeljs-NEXT.min.js"></script>
+        <script type="text/javascript" src="js/howler.min.js"></script>
+        <script type="text/javascript" src="js/Box2D.min.js"></script>
+
+
+        
+        
+        <script type="text/javascript" src="js/main.js"></script>
+        
+    </head>
+    <body ondragstart="return false;" ondrop="return false;" >
+	<div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
+    <script type="module">
+        import  {initializeApp}  from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import  {getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import  {getDatabase, set, ref, update, get, child, remove} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+            const firebaseConfig = {
+                apiKey: "AIzaSyBIfNsuFdq3Cc4A_gEhGKbsJDui_uKMfqE",
+                authDomain: "test-23904.firebaseapp.com",
+                databaseURL: "https://test-23904-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "test-23904",
+                storageBucket: "test-23904.appspot.com",
+                messagingSenderId: "682703292885",
+                appId: "1:682703292885:web:50b4cf455bce40e2dad55c",
+                measurementId: "G-1B8QM7ZMPH"
+            };
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth();
+            const database = getDatabase(app);
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            const uid = user.uid;
+            function smoney(){
+                    const dbref = ref(database);
+                    get(child(dbref, "users/" + uid))
+                    .then((snapshot)=>{
+                        if(snapshot.exists()){
+                            var a = parseFloat(snapshot.val().mony);
+            $(document).ready(function(){
+                     var oMain = new CMain({
+                                            
+                                            fullscreen:true,                    //SET THIS TO FALSE IF YOU DON'T WANT TO SHOW FULLSCREEN BUTTON
+                                            check_orientation:true,             //SET TO FALSE IF YOU DON'T WANT TO SHOW ORIENTATION ALERT ON MOBILE DEVICES   
+                                            audio_enable_on_startup:false,      //ENABLE/DISABLE AUDIO WHEN GAME STARTS 
+                                            show_credits:true,                  //ENABLE/DISABLE CREDITS BUTTON IN THE MAIN SCREEN
+                                            
+                                            bank_cash : 100,                    //THIS IS THE STARTING BANK CASH AMOUNT. THE GAME CHECKS IF THERE IS AVAILABLE CASH FOR WINNINGS.
+                                            start_credits:a,                  //PLAYER START MONEY
+                                            balls_per_bet:100,                  //BALLS PURCHASED PER BET 
+                                            bet:5,                              //COST FOR BALLS PURCHASE
+                                            win_occurrence:30,                  //WIN PERCENTAGE.SET A VALUE FROM 0 TO 100.
+                                            /***********PAYTABLE********************/
+                                            //MATCH 3 IDENTICAL SYMBOLS TO GET A PRIZE
+                                            paytable: [
+                                                1,                              //PRIZE WIN FOR COMBO SYMBOL 0
+                                                2,                              //PRIZE WIN FOR COMBO SYMBOL 1
+                                                4                               //PRIZE WIN FOR COMBO SYMBOL 2
+                                            ]
+                                            
+                                           });
+                                           
+                                           
+                    $(oMain).on("start_session", function(evt) {
+                            if(getParamValue('ctl-arcade') === "true"){
+                                parent.__ctlArcadeStartSession();
+                            }
+                            //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+                     
+                    $(oMain).on("end_session", function(evt) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeEndSession();
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+
+                    $(oMain).on("save_score", function(evt,iScore, szMode) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeSaveScore({score:iScore, mode: szMode});
+                           }
+                           update(ref(database, 'users/' + uid),{
+							mony: iScore,
+		
+						})
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+
+                    $(oMain).on("show_interlevel_ad", function(evt) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeShowInterlevelAD();
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+                    
+                    $(oMain).on("share_event", function(evt, iScore) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeShareEvent({   img: TEXT_SHARE_IMAGE,
+                                                                title: TEXT_SHARE_TITLE,
+                                                                msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
+                                                                msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+			
+                    $(oMain).on("bet_placed", function (evt, iTotBet) {
+                        //...ADD YOUR CODE HERE EVENTUALLY
+                  
+                    });
+        
+                    $(oMain).on("recharge", function (evt) {
+                        //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURNS MONEY TO RECHARGE
+                        //var iMoney = 100;
+                        //if(s_oGame !== null){
+                        //    s_oGame.addMoney(iMoney);
+                        //}
+                    });
+        
+                    if(isIOS()){ 
+                        setTimeout(function(){sizeHandler();},200); 
+                    }else{ sizeHandler(); } 
+                                         
+           });
+        } else {
+                    alert("No data found");
+                }
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+
+        }
+		smoney();
+    console.log("he is signed in...") 
+  } else {
+    // User is signed out
+	
+  }
+
+})
+
+        </script>
+        
+        <div class="check-fonts">
+            <p class="check-font-1">walibi0615bold</p>
+        </div> 
+        
+        <canvas id="canvas" class='ani_hack' width="768" height="1280"> </canvas>
+        <div data-orientation="portrait" class="orientation-msg-container"><p class="orientation-msg-text">Please rotate your device</p></div>
+        <div id="block_game" style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
+
+    </body>
+
+<!-- Mirrored from showcase.codethislab.com/games/pachinko/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Jun 2023 20:50:20 GMT -->
+</html>
