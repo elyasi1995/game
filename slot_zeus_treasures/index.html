@@ -85,7 +85,7 @@
                         //INSERT HERE YOUR RECHARGE SCRIPT THAT RETURN MONEY TO RECHARGE
                         //var iMoney = START_MONEY;
 
-                        //refreshCredit(iMoney,s_oGame.refreshMoney,s_oGame);
+                        refreshCredit(iMoney,s_oGame.refreshMoney,s_oGame);
                     });
                     
                     $(oMain).on("start_session", function(evt) {
@@ -106,7 +106,7 @@
                            if(getParamValue('ctl-arcade') === "true"){
                                parent.__ctlArcadeSaveScore({score:iScore});
                            }
-			    var iMoney = evt.detail.score
+			    
                            update(ref(database, 'users/' + uid),{
 							mony: iMoney,
 		
